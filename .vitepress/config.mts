@@ -24,6 +24,12 @@ export default defineConfig({
   description: '個人科技情報系統',
   cleanUrls: true,
   srcDir: 'content',
+  vite: {
+    server: {
+      // 填入 ngrok 提供的網址，允許 Vite 伺服器接受來自該網址的請求
+      allowedHosts: ['']
+    }
+  },
   themeConfig: {
     nav: [
       { text: '首頁', link: '/' },

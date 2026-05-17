@@ -17,13 +17,13 @@
 
 - **寫作邊界**：
   - Subagent：僅限寫入 `raw/runs/YYYY-MM-DD/`。
-  - Merge Agent：僅限寫入 `content/daily/`。
+  - Merge Agent (LLM)：將 Raw Data 智慧合併至 `content/daily/`，取代舊有 `merge.js`。
   - 嚴禁修改 `settings/`、`GEMINI.md`、`README.md` 或專案配置檔。
 - **真實性 (Grounding)**：
-  - 必須通過 HTTP 2xx 驗證與「原文引用 (Direct Quote)」審核。
-  - 只有 `verified` 狀態的條目能進入日報。
+  - 以採集到的原始正文為準。
+  - 只有 `verified` 狀態的條目能進入日報（指成功獲取 JSON 與正文）。
 - **寫作風格**：
-  - 目標讀者：**進階通才**。
+  - 目標讀者：**普通人**。
   - 要求：繁體中文、專業易懂、專注實質影響、避免渲染詞。
 - **資源調度**：
   - 採取批次派發策略（建議 3-5 個並行）。
